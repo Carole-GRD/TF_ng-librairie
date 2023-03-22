@@ -4,16 +4,19 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { AuthorsComponent } from './authors/authors.component';
-
+import { CreateAuthorComponent } from './authors/create-author/create-author.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AdminComponent,
-    AuthorsComponent
+    AuthorsComponent,
+    CreateAuthorComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule
   ],
   bootstrap: [
     AdminComponent

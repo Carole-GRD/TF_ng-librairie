@@ -3,9 +3,9 @@ export interface Author {
     id : number;
     firstname : string;
     lastname : string;
-    birthdate : Date;
-    biography : Text;
-    photo : string;
+    birthdate : string;
+    biography : string;
+    photo : File;
 }
 
 export interface AuthorResultArray {

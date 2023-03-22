@@ -4,88 +4,13 @@ nav {
   justify-content: space-between;
   // ----------------------
   background-color: #eee;
-  padding: 20px;
-  min-width: calc(50px + 20ch);
+  // padding: 20px;
+  padding: 1.25em;
+  // min-width: calc(50px + 20ch);
+  min-width: calc(3.125em + 2.5ch);
 }
 
 
 // --------------------------------------------------------------
-//             VOIR FICHIER :  style.scss
-// --------------------------------------------------------------
-// ul {
-//   list-style-type: none;
-//   margin: 0;
-//   padding: 0;
-// }
-
-// li {
-//   display: inline-block;
-//   position: relative;
-//   margin-right: 20px;
-// }
-
-// a {
-//   text-decoration: none;
-//   // color: #aaa;
-//   color: #3d3d3d;
-//   font-weight: bold;
-//   font-size: 18px;
-//   font-weight: 500;
-//   transition: all ease-in-out;
-//   display: block;
-//   padding: 10px;
-// }
-
-// a:hover {
-//   background-color: #369;
-//   color: #f9f9f9;
-//   border: none;
-//   padding: 10px 20px;
-//   font-size: 18px;
-//   font-weight: 400;
-//   border-radius: 4px;
-//   margin-left: 10px;
-//   cursor: pointer;
-// }
-
-// ul ul {
-//   position: absolute;
-//   top: 100%;
-//   left: 0;
-//   background-color: #f9f9f9;
-//   border-radius: 0 0 4px 4px;
-//   padding: 0;
-//   display: none;
-// }
-
-// ul ul li {
-//   display: block;
-//   width: 200px;
-//   margin: 0;
-// }
-
-// ul li:hover > ul {
-//   display: block;
-// }
-
-// .buttons {
-//   // float: right;
-//   // margin-top: 10px;
-// }
-
-// .buttons button {
-//   background-color: #3d3d3d;
-//   color: #f9f9f9;
-//   border: none;
-//   padding: 10px 20px;
-//   font-size: 18px;
-//   border-radius: 4px;
-//   margin-left: 10px;
-//   cursor: pointer;
-// }
-
-// .buttons button:hover {
-//   background-color: #369;
-// }
-
+//       +  VOIR FICHIER :  style.scss
 // --------------------------------------------------------------

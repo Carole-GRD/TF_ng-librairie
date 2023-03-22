@@ -32,10 +32,13 @@ h2, h3 {
   margin-bottom: 2%;
 }
 
+.mb-10 {
+  margin-bottom: 10%;
+}
+
 
 // --------------------------------------------------------------
-//           VOIR FICHIER :  navbar.components.scss
-//                           admin.components.scss
+//                           NAVBAR
 // --------------------------------------------------------------
 
 // nav {
@@ -118,11 +121,6 @@ ul li:hover > ul {
   display: block;
 }
 
-.buttons {
-  // float: right;
-  // margin-top: 10px;
-}
-
 .buttons button {
   background-color: #3d3d3d;
   color: #f9f9f9;
@@ -142,4 +140,119 @@ ul li:hover > ul {
   background-color: #369;
 }
 
+// --------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------
+//                           ADMIN
+// --------------------------------------------------------------
+
+h2 {
+  text-align: center;
+}
+
+h3, p {
+    // padding-left: 2%;
+    padding-left: 0.5em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: flex-start;
+  margin: 0 2rem;
+  gap: 2rem;
+}
+
+article {
+    padding: 0.625rem;
+    border: none;
+    border-radius: 0.313rem;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+
+    width: calc(50% - 1rem);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 90%;
+}
+
+.buttons-update-delete {
+    display: flex;
+    flex-direction: row;
+}
+
+a:hover {
+    display: inline-block;
+}
+
+// --------------------------------------------------------------
+
+
+
+
+
+// --------------------------------------------------------------
+//                           FORMULAIRE
+// --------------------------------------------------------------
+.button-back {
+  display: flex;
+  justify-content: flex-end;
+}
+.content-create {
+  // border: 1px solid hotpink;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+}
+.content-create-form {
+  // border: 1px solid blue;
+  width: 50vw;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  margin-bottom: 0.5rem ;
+}
+.form-group input {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 0.25em;
+  border-bottom: 1px solid #3d3d3d;
+  background-color: #f9f9f9;
+}
+.txt-danger {
+  color : darkred;
+  font-size: smaller;
+}
+
+
+// --------------------------------------------------------------
+
+
+
+
+
+// --------------------------------------------------------------
+//                           t
 // --------------------------------------------------------------

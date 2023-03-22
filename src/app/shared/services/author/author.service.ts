@@ -20,12 +20,22 @@ export class AuthorService {
     return this._httpClient.get<AuthorResult>(this._authorUrl + id);
   }
 
-  create(artistToAdd: Author) : Observable<AuthorResult> {
-    return this._httpClient.post<AuthorResult>(this._authorUrl, artistToAdd);
+  create(authorToAdd: Author, file : File) : Observable<AuthorResult> {
+    // console.log(authorToAdd.birthdate);
+    // console.log(typeof (authorToAdd.birthdate));
+    
+    let formData : FormData = new FormData();
+    formData.append('firstname', authorToAdd.firstname);
+    formData.append('lastname', authorToAdd.lastname);
+    formData.append('birthdate', authorToAdd.birthdate);
+    formData.append('biography', authorToAdd.biography);
+    formData.append('photo', file, file.name);
+
+    return this._httpClient.post<AuthorResult>(this._authorUrl, formData);
   }
 
-  update(id: number, artistToUpdate: Author) : Observable<any> {
-    return this._httpClient.put(this._authorUrl + id, artistToUpdate);
+  update(id: number, authorToUpdate: Author) : Observable<any> {
+    return this._httpClient.put(this._authorUrl + id,authorToUpdate);
   }
 
   delete(id: number) : Observable<any> {

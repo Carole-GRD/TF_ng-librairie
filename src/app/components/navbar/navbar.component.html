@@ -1,0 +1,31 @@
+<nav>
+    <ul>
+        <li>
+            <a routerLink="">Livre & Cie</a>
+            <ul>
+                <li><a routerLink="/home/book">Livres</a></li>
+                <li><a routerLink="/home/order">Commandes</a></li>
+                <li><a routerLink="/home/user">Profil</a></li>
+            </ul>
+        </li>
+        <li>
+            <a routerLink="/admin">Panel Admin</a>
+            <ul>
+                <li><a routerLink="/admin/books">Livres</a></li>
+                <li><a routerLink="/admin/author">Auteurs</a></li>
+                <li><a routerLink="/admin/genre">Genres</a></li>
+                <li><a routerLink="/admin/publisher">Maisons d'éditions</a></li>
+                <li><a routerLink="/admin/format">Formats</a></li>
+                <li><a routerLink="/admin/edition">Éditions</a></li>
+                <li><a routerLink="/admin/order">Commandes</a></li>
+                <li><a routerLink="/admin/user">Utilisateurs</a></li>
+            </ul>
+        </li>    
+    </ul>
+    <div class="buttons">
+        <button>Se connecter</button>
+        <!-- <button *ngIf="!isConnected" routerLink="/login">Se connecter</button> -->
+        <button>Se déconnecter</button>
+        <!-- <button *ngIf="isConnected" (click)="disConnect()" >Se déconnecter</button> -->
+    </div>
+</nav>

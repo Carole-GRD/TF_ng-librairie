@@ -1,0 +1,23 @@
+<h3>Gestion des auteurs</h3>
+<p>Nombre d'auteurs : {{ countAuthors }}</p>
+
+<div class="content">
+    <article *ngFor="let author of listAuthors">
+        <section>
+            <p>{{ author.firstname }}</p>
+            <p>{{ author.lastname }}</p>
+            <p>{{ author.birthdate | date : 'dd/MM/yyyy' }}</p>
+            <img [src]="'http://localhost:8080' + author.photo" [alt]="'Photo de ' + author.firstname + author.lastname">
+            <p>Biographie : {{ author.biography }}</p>
+        </section>
+        <section class="buttons-update-delete">
+            <button>Modifier</button>
+            <!-- <button routerLink="/admin/authors/update/{{author.id}}">Modifier</button> -->
+            <button>Supprimer</button>
+            <!-- <button (click)="deleteAuthor(author.id)">Supprimer</button> -->
+        </section>
+    </article>
+</div>
+
+<a class="mb-2">Ajouter un artist</a>
+<!-- <a routerLink="/admin/authors/create">Ajouter un artist</a> -->

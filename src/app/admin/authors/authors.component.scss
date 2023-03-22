@@ -1,0 +1,50 @@
+h3, p {
+    padding-left: 2%;
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    
+    // border: 1px solid darkred;
+}
+
+article {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    margin: 2rem;
+    // border: 1px solid darkgreen;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+
+    max-width: 25vw;
+    min-width: 15vw;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 90%;
+}
+
+.buttons-update-delete {
+    display: flex;
+    flex-direction: row;
+}
+
+a:hover {
+    display: inline-block;
+}

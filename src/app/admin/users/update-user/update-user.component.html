@@ -1,0 +1,61 @@
+
+
+
+
+
+
+<div class="content-create-update">
+    
+    <div class="button-back">
+        <a routerLink="/admin/user">Revenir à la liste des utilisateurs</a>
+    </div>
+
+    <div>
+        <h2 class="mb-10">Modifier un utilisateur</h2>
+        
+        <form [formGroup]="userForm" (ngSubmit)="updateUser()">
+            <div class="form-group mb-10">
+                <label for="firstname">Prénom :</label>
+                <input id="firstname" type="text" formControlName="firstname">
+                <span class="txt-danger" *ngIf="userForm.get('firstname')?.errors?.['required'] && userForm.get('firstname')?.touched">Ce champ est requis</span>
+            </div>
+            <div class="form-group mb-10">
+                <label for="lastname">Nom :</label>
+                <input id="lastname" type="text" formControlName="lastname">
+                <span class="txt-danger" *ngIf="userForm.get('lastname')?.errors?.['required'] && userForm.get('lastname')?.touched">Ce champ est requis</span>
+            </div>
+            <div class="form-group mb-10">
+                <label for="pseudo">Pseudo :</label>
+                <input id="pseudo" type="text" formControlName="pseudo">
+            </div>
+            <div class="form-group mb-10">
+                <label for="email">Email :</label>
+                <input id="email" type="email" formControlName="email">
+            </div>
+            <div class="form-group mb-10">
+                <label for="password">Mot de passe :</label>
+                <input id="password" type="password" formControlName="password">
+            </div>
+            <div class="form-group mb-10">
+                <label for="role">Role :</label>
+                <select id="role" formControlName="role">
+                    <option value="Admin">Admin</option>
+                    <option value="Sous-Admin">Sous-Admin</option>
+                    <option value="Utilisateur">Utilisateur</option>
+                </select>
+            </div>
+            <div class="form-group mb-10">
+                <label for="avatar">Avatar :</label>
+                <!-- <input id="avatar" type="file" formControlName="avatar"> -->
+                <input id="avatar" type="file" (change)="loadFile($event)">
+            </div>
+            
+        
+            <button type="submit">Modifier</button>
+        </form>
+    </div>
+
+
+</div>
+
+

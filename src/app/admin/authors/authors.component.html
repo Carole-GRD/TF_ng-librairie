@@ -8,7 +8,7 @@
                 <section>
                     <p>{{ author.firstname }} {{ author.lastname }}</p>
                     <p>Né(e) le : {{ author.birthdate | date : 'dd/MM/yyyy' }}</p>
-                    <img [src]="'http://localhost:8080' + author.photo" [alt]="'Photo de ' + author.firstname + author.lastname">
+                    <img [src]="'http://localhost:8080' + author.photo" [alt]="'Photo de ' + author.firstname + ' ' + author.lastname">
                     <p>{{ author.biography }}</p>
                 </section>
                 <section class="buttons-update-delete">

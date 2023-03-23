@@ -16,6 +16,9 @@ import { UpdateGenreComponent } from './genres/update-genre/update-genre.compone
 import { PublishersComponent } from './publishers/publishers.component';
 import { CreatePublisherComponent } from './publishers/create-publisher/create-publisher.component';
 import { UpdatePublisherComponent } from './publishers/update-publisher/update-publisher.component';
+import { UsersComponent } from './users/users.component';
+import { CreateUserComponent } from './users/create-user/create-user.component';
+import { UpdateUserComponent } from './users/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { UpdatePublisherComponent } from './publishers/update-publisher/update-p
     UpdateGenreComponent,
     PublishersComponent,
     CreatePublisherComponent,
-    UpdatePublisherComponent
+    UpdatePublisherComponent,
+    UsersComponent,
+    CreateUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     CommonModule,

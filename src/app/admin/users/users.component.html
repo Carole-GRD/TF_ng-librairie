@@ -1,0 +1,26 @@
+
+<div class="container">
+    <h3>Gestion des utilisateurs</h3>
+    <p>Nombre d'utilisateurs : {{ countUsers }}</p>
+    
+    <div class="content">
+            <article *ngFor="let user of listUsers">
+                <section>
+                    <p>{{ user.lastname | uppercase }} {{ user.firstname }}</p>
+                    <p>{{ user.pseudo }}</p>
+                    <p>{{ user.email }}</p>
+                    <p>{{ user.password }}</p>
+                    <p>{{ user.role }}</p>                
+                    <img [src]="'http://localhost:8080' + user.avatar" [alt]="'Avatar de ' + user.firstname + ' ' + user.lastname">
+                </section>
+                <section class="buttons-update-delete">
+                    <button routerLink="/admin/user/update/{{user.id}}">Modifier</button>
+                    <button (click)="deleteUser(user.id)">Supprimer</button>
+                </section>
+            </article>
+    </div>
+    
+    <a  class="mb-2" routerLink="/admin/user/create">Ajouter un utilisateur</a>
+</div>
+
+

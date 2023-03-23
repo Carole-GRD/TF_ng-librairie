@@ -12,6 +12,9 @@ import { UpdateGenreComponent } from './genres/update-genre/update-genre.compone
 import { CreatePublisherComponent } from './publishers/create-publisher/create-publisher.component';
 import { PublishersComponent } from './publishers/publishers.component';
 import { UpdatePublisherComponent } from './publishers/update-publisher/update-publisher.component';
+import { CreateUserComponent } from './users/create-user/create-user.component';
+import { UpdateUserComponent } from './users/update-user/update-user.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   { path: 'author', component: AuthorsComponent },
@@ -26,6 +29,9 @@ const routes: Routes = [
   { path: 'publisher', component: PublishersComponent },
   { path: 'publisher/create', component: CreatePublisherComponent },
   { path: 'publisher/update/:id', component: UpdatePublisherComponent },
+  { path: 'user', component: UsersComponent },
+  { path: 'user/create', component: CreateUserComponent },
+  { path: 'user/update/:id', component: UpdateUserComponent },
 ];
 
 @NgModule({

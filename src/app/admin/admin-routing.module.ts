@@ -6,6 +6,9 @@ import { UpdateAuthorComponent } from './authors/update-author/update-author.com
 import { CreateFormatComponent } from './formats/create-format/create-format.component';
 import { FormatsComponent } from './formats/formats.component';
 import { UpdateFormatComponent } from './formats/update-format/update-format.component';
+import { CreateGenreComponent } from './genres/create-genre/create-genre.component';
+import { GenresComponent } from './genres/genres.component';
+import { UpdateGenreComponent } from './genres/update-genre/update-genre.component';
 
 const routes: Routes = [
   { path: 'author', component: AuthorsComponent },
@@ -14,6 +17,9 @@ const routes: Routes = [
   { path: 'format', component: FormatsComponent },
   { path: 'format/create', component: CreateFormatComponent },
   { path: 'format/update/:id', component: UpdateFormatComponent },
+  { path: 'genre', component: GenresComponent },
+  { path: 'genre/create', component: CreateGenreComponent },
+  { path: 'genre/update/:id', component: UpdateGenreComponent },
 ];
 
 @NgModule({

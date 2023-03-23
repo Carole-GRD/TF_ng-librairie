@@ -1,36 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormatService } from 'src/app/shared/services/format/format.service';
+import { GenreService } from 'src/app/shared/services/genre/genre.service';
+
 
 @Component({
-  selector: 'app-update-format',
-  templateUrl: './update-format.component.html',
-  styleUrls: ['./update-format.component.scss']
+  selector: 'app-update-genre',
+  templateUrl: './update-genre.component.html',
+  styleUrls: ['./update-genre.component.scss']
 })
-export class UpdateFormatComponent implements OnInit {
+export class UpdateGenreComponent implements OnInit {
 
-  formatForm : FormGroup;
-  formatId : number;
+  genreForm : FormGroup;
+  genreId : number;
   // // uniqueNameError: string = '';
 
   constructor(
       private _fb : FormBuilder, 
-      private _formatService : FormatService, 
+      private _genreService : GenreService, 
       private _router : Router,
       private _activatedRoute : ActivatedRoute
     ) {
-      this.formatForm = this._fb.group({
+      this.genreForm = this._fb.group({
         name : [null, [Validators.required, Validators.maxLength(50)]]
       })
-      this.formatId= parseInt(this._activatedRoute.snapshot.params['id']);
+      this.genreId= parseInt(this._activatedRoute.snapshot.params['id']);
   }
 
   ngOnInit() : void {
-    this._formatService.getById(this.formatId).subscribe({
+    this._genreService.getById(this.genreId).subscribe({
      
       next : (res) => {
-        this.formatForm.patchValue({
+        this.genreForm.patchValue({
           name : res.result.name
         })
       },
@@ -48,21 +49,21 @@ export class UpdateFormatComponent implements OnInit {
     })
   }
 
-  updateFormat() : void {
-    if (this.formatForm.valid) {
-      this._formatService.update(this.formatId, this.formatForm.value).subscribe({
+  updateGenre() : void {
+    if (this.genreForm.valid) {
+      this._genreService.update(this.genreId, this.genreForm.value).subscribe({
         error : (err) => {
           // if (err.status === 409) {
           //   this.uniqueNameError = err.error.msg; 
           // }
         },
         complete : () => {
-          this._router.navigateByUrl('/admin/format')
+          this._router.navigateByUrl('/admin/genre')
         }
       })
     }
     else {
-      this.formatForm.markAllAsTouched();
+      this.genreForm.markAllAsTouched();
     }
-  } 
+  }
 }

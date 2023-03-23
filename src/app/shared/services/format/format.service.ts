@@ -20,12 +20,12 @@ export class FormatService {
     return this._httpClient.get<FormatResult>(this._formatUrl + id);
   }
 
-  create(genreToAdd: Format) : Observable<FormatResult> { 
-    return this._httpClient.post<FormatResult>(this._formatUrl, genreToAdd);
+  create(formatToAdd: Format) : Observable<FormatResult> { 
+    return this._httpClient.post<FormatResult>(this._formatUrl, formatToAdd);
   }
 
-  update(id: number, genreToUpdate: Format) : Observable<any> { 
-    return this._httpClient.put(this._formatUrl + id, genreToUpdate);
+  update(id: number, formatToUpdate: Format) : Observable<any> { 
+    return this._httpClient.put(this._formatUrl + id, formatToUpdate);
   }
 
   delete(id: number) : Observable<any> { 

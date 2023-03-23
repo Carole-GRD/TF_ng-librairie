@@ -1,0 +1,19 @@
+
+<div class="container">
+    <h3>Gestion des genres</h3>
+    <p>Nombre de genres : {{ countGenres }}</p>
+    
+    <div class="content">
+            <article *ngFor="let genre of listGenres">
+                <section>
+                    <p>{{ genre.name }}</p>
+                </section>
+                <section class="buttons-update-delete">
+                    <button routerLink="/admin/genre/update/{{genre.id}}">Modifier</button>
+                    <button (click)="deleteGenre(genre.id)">Supprimer</button>
+                </section>
+            </article>
+    </div>
+    
+    <a  class="mb-2" routerLink="/admin/genre/create">Ajouter un genre</a>
+</div>

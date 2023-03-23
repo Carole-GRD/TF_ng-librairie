@@ -1,0 +1,21 @@
+
+<div class="content-create-update">
+
+    <div class="button-back">
+        <a routerLink="/admin/genre">Revenir à la liste des genres</a>
+    </div>
+
+    <div>
+        <h2 class="mb-10">Enregistrer un format</h2>
+        
+        <form [formGroup]="genreForm" (ngSubmit)="updateGenre()">
+            <div class="form-group mb-10">
+                <label for="name">Nom :</label>
+                <input id="name" type="text" formControlName="name">
+                <span class="txt-danger" *ngIf="genreForm.get('name')?.errors?.['required'] && genreForm.get('name')?.touched">Ce champ est requis</span>
+            </div>
+            <button type="submit">Enregistrer</button>
+        </form>
+    </div>
+
+</div>

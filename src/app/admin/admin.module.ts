@@ -10,6 +10,9 @@ import { UpdateAuthorComponent } from './authors/update-author/update-author.com
 import { FormatsComponent } from './formats/formats.component';
 import { CreateFormatComponent } from './formats/create-format/create-format.component';
 import { UpdateFormatComponent } from './formats/update-format/update-format.component';
+import { GenresComponent } from './genres/genres.component';
+import { CreateGenreComponent } from './genres/create-genre/create-genre.component';
+import { UpdateGenreComponent } from './genres/update-genre/update-genre.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { UpdateFormatComponent } from './formats/update-format/update-format.com
     UpdateAuthorComponent,
     FormatsComponent,
     CreateFormatComponent,
-    UpdateFormatComponent
+    UpdateFormatComponent,
+    GenresComponent,
+    CreateGenreComponent,
+    UpdateGenreComponent
   ],
   imports: [
     CommonModule,

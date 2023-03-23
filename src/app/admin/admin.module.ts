@@ -13,6 +13,9 @@ import { UpdateFormatComponent } from './formats/update-format/update-format.com
 import { GenresComponent } from './genres/genres.component';
 import { CreateGenreComponent } from './genres/create-genre/create-genre.component';
 import { UpdateGenreComponent } from './genres/update-genre/update-genre.component';
+import { PublishersComponent } from './publishers/publishers.component';
+import { CreatePublisherComponent } from './publishers/create-publisher/create-publisher.component';
+import { UpdatePublisherComponent } from './publishers/update-publisher/update-publisher.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { UpdateGenreComponent } from './genres/update-genre/update-genre.compone
     UpdateFormatComponent,
     GenresComponent,
     CreateGenreComponent,
-    UpdateGenreComponent
+    UpdateGenreComponent,
+    PublishersComponent,
+    CreatePublisherComponent,
+    UpdatePublisherComponent
   ],
   imports: [
     CommonModule,

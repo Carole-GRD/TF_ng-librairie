@@ -202,8 +202,10 @@ section {
     align-items: center;
 }
 
-img {
+.content img {
     max-width: 90%;
+    height: 20rem;
+    border-radius: 0.313rem;
 }
 
 .buttons-update-delete {

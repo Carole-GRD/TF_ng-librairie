@@ -6,7 +6,7 @@
     </div>
 
     <div>
-        <h2 class="mb-10">Enregistrer un format</h2>
+        <h2 class="mb-10">Modifier un format</h2>
         
         <form [formGroup]="formatForm" (ngSubmit)="updateFormat()">
             <div class="form-group mb-10">
@@ -14,7 +14,7 @@
                 <input id="name" type="text" formControlName="name">
                 <span class="txt-danger" *ngIf="formatForm.get('name')?.errors?.['required'] && formatForm.get('name')?.touched">Ce champ est requis</span>
             </div>
-            <button type="submit">Enregistrer</button>
+            <button type="submit">Modifier</button>
         </form>
     </div>
 

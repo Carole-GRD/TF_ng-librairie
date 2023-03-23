@@ -1,0 +1,29 @@
+
+<div class="content-create-update">
+
+    <div class="button-back">
+        <a routerLink="/admin/publisher">Revenir à la liste des maisons d'éditions</a>
+    </div>
+
+    <div>
+        <h2 class="mb-10">Modifier une maison d'édition</h2>
+        
+        <form [formGroup]="publisherForm" (ngSubmit)="updatePublisher()">
+            <div class="form-group mb-10">
+                <label for="name">Nom :</label>
+                <input id="name" type="text" formControlName="name">
+                <span class="txt-danger" *ngIf="publisherForm.get('name')?.errors?.['required'] && publisherForm.get('name')?.touched">Ce champ est requis</span>
+            </div>
+            <div class="form-group mb-10">
+                <label for="place">Lieu :</label>
+                <input id="place" type="text" formControlName="place">
+            </div>
+            <div class="form-group mb-10">
+                <label for="website">Site Web :</label>
+                <input id="website" type="text" formControlName="website">
+            </div>
+            <button type="submit">Modifier</button>
+        </form>
+    </div>
+
+</div>

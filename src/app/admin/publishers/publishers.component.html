@@ -1,0 +1,23 @@
+
+
+<div class="container">
+    <h3>Gestion des maisons d'édition</h3>
+    <p>Nombre de genres : {{ countPublishers }}</p>
+    
+    <div class="content">
+            <article *ngFor="let publisher of listPublishers">
+                <section>
+                    <p>{{ publisher.name }}</p>
+                    <p>{{ publisher.place }}</p>
+                    <p>{{ publisher.website }}</p>
+                </section>
+                <section class="buttons-update-delete">
+                    <button routerLink="/admin/publisher/update/{{publisher.id}}">Modifier</button>
+                    <button (click)="deletePublisher(publisher.id)">Supprimer</button>
+                </section>
+            </article>
+    </div>
+    
+    <a  class="mb-2" routerLink="/admin/publisher/create">Ajouter une maison d'édition</a>
+</div>
+

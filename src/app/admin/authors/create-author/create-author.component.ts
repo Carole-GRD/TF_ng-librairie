@@ -26,14 +26,14 @@ export class CreateAuthorComponent {
     })
   }
 
-  myFile! : File
-  loadFile(e : any) {
-    this.myFile = e.target.files[0]
+  filePhoto! : File
+  loadFile(e : any) : void {
+    this.filePhoto = e.target.files[0]
   }
 
   createAuthor() : void {
     if (this.authorForm.valid) {
-      this._authorService.create(this.authorForm.value, this.myFile).subscribe({
+      this._authorService.create(this.authorForm.value, this.filePhoto).subscribe({
         next : (res) => {},
         error : (err) => {},
         complete : () => {

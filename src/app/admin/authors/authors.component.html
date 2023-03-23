@@ -12,10 +12,8 @@
                     <p>{{ author.biography }}</p>
                 </section>
                 <section class="buttons-update-delete">
-                    <button>Modifier</button>
-                    <!-- <button routerLink="/admin/authors/update/{{author.id}}">Modifier</button> -->
-                    <button>Supprimer</button>
-                    <!-- <button (click)="deleteAuthor(author.id)">Supprimer</button> -->
+                    <button routerLink="/admin/author/update/{{author.id}}">Modifier</button>
+                    <button (click)="deleteAuthor(author.id)">Supprimer</button>
                 </section>
             </article>
     </div>

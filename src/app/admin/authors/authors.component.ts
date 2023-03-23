@@ -36,6 +36,18 @@ export class AuthorsComponent implements OnInit {
     })
   }
 
-
+  deleteAuthor(id : number) {
+    this._authorService.delete(id).subscribe({
+      error : (err) => {
+        console.log('erreur de suppression : ', err);
+        if(err.status === 404) {
+          this._router.navigateByUrl('/not-found');
+        }
+      },
+      complete : () => {
+        this._authorService.getAll().subscribe((res) => { this.listAuthors = res.results });
+      }
+    })
+  }
 
 }

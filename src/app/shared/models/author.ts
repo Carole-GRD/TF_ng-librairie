@@ -3,7 +3,8 @@ export interface Author {
     id : number;
     firstname : string;
     lastname : string;
-    birthdate : string;
+    // birthdate : string;
+    birthdate : Date;
     biography : string;
     photo : File;
 }

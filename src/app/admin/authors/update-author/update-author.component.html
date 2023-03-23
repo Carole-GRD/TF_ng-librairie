@@ -1,0 +1,46 @@
+
+
+
+
+<div class="content-create">
+    
+    <div class="button-back">
+        <a routerLink="/admin/author">Revenir à la liste des auteurs</a>
+    </div>
+
+    <div class="content-create-form">
+        <h2 class="mb-10">Modifier un auteur</h2>
+        
+        <form [formGroup]="authorForm" (ngSubmit)="updateAuthor()">
+            <div class="form-group mb-10">
+                <label for="firstname">Prénom :</label>
+                <input id="firstname" type="text" formControlName="firstname">
+                <span class="txt-danger" *ngIf="authorForm.get('firstname')?.errors?.['required'] && authorForm.get('firstname')?.touched">Ce champ est requis</span>
+            </div>
+            <div class="form-group mb-10">
+                <label for="lastname">Nom :</label>
+                <input id="lastname" type="text" formControlName="lastname">
+                <span class="txt-danger" *ngIf="authorForm.get('lastname')?.errors?.['required'] && authorForm.get('lastname')?.touched">Ce champ est requis</span>
+            </div>
+            <div class="form-group mb-10">
+                <label for="birthdate">Date de naissance :</label>
+                <input id="birthdate" type="date" formControlName="birthdate">
+            </div>
+            <div class="form-group mb-10">
+                <label for="biography">Biographie :</label>
+                <input id="biography" type="text" formControlName="biography">
+            </div>
+            <div class="form-group mb-10">
+                <label for="photo">Photo :</label>
+                <!-- <input id="photo" type="file" formControlName="photo"> -->
+                <input id="photo" type="file" (change)="loadFile($event)">
+            </div>
+            
+        
+            <button type="submit">Modifier</button>
+        </form>
+    </div>
+
+
+</div>
+

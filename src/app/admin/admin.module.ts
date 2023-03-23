@@ -7,13 +7,19 @@ import { AuthorsComponent } from './authors/authors.component';
 import { CreateAuthorComponent } from './authors/create-author/create-author.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UpdateAuthorComponent } from './authors/update-author/update-author.component';
+import { FormatsComponent } from './formats/formats.component';
+import { CreateFormatComponent } from './formats/create-format/create-format.component';
+import { UpdateFormatComponent } from './formats/update-format/update-format.component';
 
 @NgModule({
   declarations: [
     AdminComponent,
     AuthorsComponent,
     CreateAuthorComponent,
-    UpdateAuthorComponent
+    UpdateAuthorComponent,
+    FormatsComponent,
+    CreateFormatComponent,
+    UpdateFormatComponent
   ],
   imports: [
     CommonModule,

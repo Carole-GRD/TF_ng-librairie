@@ -175,10 +175,13 @@ h2 {
   gap: 2rem;
 }
 
-.content p:first-of-type {
-  margin-bottom: 0;
+.content p:nth-child(1) {
   font-size: 1.5rem;
   font-weight: 600;
+}s
+
+.content p:nth-child(2) {
+  margin-top: 0;
 }
 
 article {
@@ -190,7 +193,6 @@ article {
     box-shadow: 0 2px 3px rgba(0,0,0,0.5);
 
     width: calc(100%);
-    flex: 0 1 auto;
 }
 
 section {
@@ -226,15 +228,11 @@ a:hover {
   display: flex;
   justify-content: flex-end;
 }
-.content-create {
+.content-create-update {
   // border: 1px solid hotpink;
   display: flex;
   flex-direction: column;
   width: 80vw;
-}
-.content-create-form {
-  // border: 1px solid blue;
-  width: 50vw;
 }
 
 .form-group {
@@ -287,27 +285,31 @@ a:hover {
 // -----
 
 @media screen and (min-width: 700px) {
-  .content {
-    justify-content: flex-start;
-  }
+
   article {
-    flex: 1 1 auto;
-    width: calc(50% - 1rem);
-    flex: 0 1 auto;
+    flex: 0 1 calc(50% - 1rem);
+  }
+  // ADMIN - Create (formulaire)
+  .content-create-update{
+    max-width: 45vw;
   }
 }
 
 
 
 @media screen and (min-width: 1240px) {
+
+  // ADMIN - Get All
   .content {
     margin: 0 3rem 1.5rem;
     justify-content: flex-start;
     gap: 3rem;
   }
   article {
-    flex: 1 1 auto;
-    width: calc((100%/3) - 3rem);
-    flex: 0 1 auto;
+    flex: 0 1 calc((100%/3) - 2rem);
+  }
+  // ADMIN - Create (formulaire)
+  .content-create-update{
+    max-width: 30vw;
   }
 }

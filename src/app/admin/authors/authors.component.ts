@@ -45,7 +45,7 @@ export class AuthorsComponent implements OnInit {
         }
       },
       complete : () => {
-        this._authorService.getAll().subscribe((res) => { this.listAuthors = res.results });
+        this._authorService.getAll().subscribe((res) => { this.listAuthors = res.results; this.countAuthors = res.count; });
       }
     })
   }

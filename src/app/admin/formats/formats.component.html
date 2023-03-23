@@ -1,0 +1,19 @@
+
+<div class="container">
+    <h3>Gestion des formats</h3>
+    <p>Nombre de formats : {{ countFormats }}</p>
+    
+    <div class="content">
+            <article *ngFor="let format of listFormats">
+                <section>
+                    <p>{{ format.name }}</p>
+                </section>
+                <section class="buttons-update-delete">
+                    <button routerLink="/admin/format/update/{{format.id}}">Modifier</button>
+                    <button (click)="deleteFormat(format.id)">Supprimer</button>
+                </section>
+            </article>
+    </div>
+    
+    <a  class="mb-2" routerLink="/admin/format/create">Ajouter un format</a>
+</div>

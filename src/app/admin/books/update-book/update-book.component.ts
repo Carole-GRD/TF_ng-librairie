@@ -80,26 +80,13 @@ export class UpdateBookComponent implements OnInit {
 
     this._genreService.getAll().subscribe({
       next: (res) => {
-        console.log('NEXT', res);
         this.listGenres = res.results;
-      },
-      error: (err) => {
-        console.log('ERROR', err);
-      },
-      complete: () => {
-        console.log('COMPLETE');
       }
     })
+
     this._authorService.getAll().subscribe({
       next: (res) => {
-        console.log('NEXT', res);
         this.listAuthors = res.results;
-      },
-      error: (err) => {
-        console.log('ERROR', err);
-      },
-      complete: () => {
-        console.log('COMPLETE');
       }
     })
   }
@@ -107,22 +94,22 @@ export class UpdateBookComponent implements OnInit {
   updateBook(): void {
     if (this.bookForm.valid) {
 
-      //Suppression des auteurs
+      // Suppression des auteurs
       let authorsdelete : BookAuthorUpdate = { authors: this.listAuthorsDelete };
       let $authorDelete = this.__bookService.authordelete(this.bookId, authorsdelete)
 
-      //Ajout des auteurs
+      // Ajout des auteurs
       let authors : BookAuthorUpdate = { authors: this.bookForm.value.authors };
       let $authorCreate = this.__bookService.authorcreate(this.bookId, authors)
 
-      //Modification
+      // Modification du livre
       let bookToUpdate: BookUpdate = {
         title: this.bookForm.value.title,
         description: this.bookForm.value.description,
         publication_date: this.bookForm.value.publication_date,
         GenreId: this.bookForm.value?.GenreId
       }
-      console.log('bookToUpdate : ', bookToUpdate);
+      // console.log('bookToUpdate : ', bookToUpdate);
 
       let $bookupdate = this.__bookService.update(this.bookId, bookToUpdate)
 
@@ -130,8 +117,7 @@ export class UpdateBookComponent implements OnInit {
       //le forkJoin prend un tableau d'Observables en paramètre, le complete se déclenche une fois que tous les observables fournis sont complete
       forkJoin([$authorDelete, $authorCreate, $bookupdate]).subscribe({
         next : () => {
-          console.log('FORK NEXT');
-          
+          console.log('FORK NEXT');  
         },
         error: (error) => {
           if (error.status === 404) {
@@ -141,48 +127,8 @@ export class UpdateBookComponent implements OnInit {
         },
         complete: () => {
           this._router.navigateByUrl('/admin/book')
-
         }
       })
-
-
-
-      // let authorsdelete = { authors : this.listAuthorsDelete };
-
-      //   this.__bookService.authordelete(this.bookId, authorsdelete).subscribe({
-      //     error : (error) => {
-      //       if (error.status === 404) {
-      //         console.log(error);
-      //         this._router.navigateByUrl('/not-found')
-      //       }
-      //     }
-      //   })
-
-      // let authors = { authors : this.bookForm.value.authors };
-      // this.__bookService.authorcreate(this.bookId, authors).subscribe({
-      //   error : (error) => {
-      //     if (error.status === 404) {
-      //       console.log(error);
-      //       this._router.navigateByUrl('/not-found')
-      //     }
-      //   }
-      // });
-
-
-      // let bookToUpdate : BookUpdate = {
-      //   title: this.bookForm.value.title,
-      //   description : this.bookForm.value.description,
-      //   publication_date : this.bookForm.value.publication_date,
-      //   GenreId : this.bookForm.value?.GenreId
-      // }
-      // console.log('bookToUpdate : ', bookToUpdate);
-
-      // this.__bookService.update(this.bookId, bookToUpdate).subscribe({
-      //   error : (err) => {},
-      //   complete : () => {
-      //     this._router.navigateByUrl('/admin/book')
-      //   }
-      // })
 
     }
     else {
@@ -208,19 +154,6 @@ export class UpdateBookComponent implements OnInit {
     this.listAuthorsDelete.push(authorId);
 
     this.authorsForm.removeAt(id);
-
-    // this.__bookService.authordelete(this.bookId, authorId).subscribe({
-    //   error : (error) => {
-    //     if (error.status === 404) {
-    //       console.log(error);
-    //       this._router.navigateByUrl('/not-found')
-    //     }
-    //   },
-    //   complete : () => {
-    //     // this.authorsForm.removeAt(id);
-    //     this._authorService.getAll().subscribe((res) => { this.listAuthors = res.results });
-    //   }
-    // })
 
   }
 

@@ -1,0 +1,30 @@
+
+
+<div class="container">
+    <h3>Gestion des livres</h3>
+    <p>Nombre de livres : {{ countBooks }}</p>
+
+    <a  class="mb-2" routerLink="/admin/book/create">Ajouter un livre</a>
+    
+    <div class="content">
+            <article *ngFor="let book of listBooks">
+                <section>
+                    <p>{{ book.title }}</p>
+                    <p>Résumé : </p>
+                    <p>{{ book.description }}</p>
+                    <p>Auteur(s) : </p>
+                    <p *ngFor="let autor of book.Authors">{{ autor.firstname }} {{ autor.lastname }}</p>
+                    <p>Date de publication : </p>
+                    <p>{{ book.publication_date | date : 'dd/MM/yyyy' }}</p>
+                    <p>Genre : </p>
+                    <p>{{ book.Genre?.name }}</p>
+                </section>
+                <section class="buttons-update-delete">
+                    <button routerLink="/admin/book/update/{{book.id}}">Modifier</button>
+                    <button (click)="deleteBook(book.id)">Supprimer</button>
+                </section>
+            </article>
+    </div>
+</div>
+
+

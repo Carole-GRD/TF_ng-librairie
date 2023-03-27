@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthorsComponent } from './authors/authors.component';
 import { CreateAuthorComponent } from './authors/create-author/create-author.component';
 import { UpdateAuthorComponent } from './authors/update-author/update-author.component';
+import { BooksComponent } from './books/books.component';
+import { CreateBookComponent } from './books/create-book/create-book.component';
+import { UpdateBookComponent } from './books/update-book/update-book.component';
 import { CreateFormatComponent } from './formats/create-format/create-format.component';
 import { FormatsComponent } from './formats/formats.component';
 import { UpdateFormatComponent } from './formats/update-format/update-format.component';
@@ -32,6 +35,9 @@ const routes: Routes = [
   { path: 'user', component: UsersComponent },
   { path: 'user/create', component: CreateUserComponent },
   { path: 'user/update/:id', component: UpdateUserComponent },
+  { path: 'book', component: BooksComponent },
+  { path: 'book/create', component: CreateBookComponent },
+  { path: 'book/update/:id', component: UpdateBookComponent },
 ];
 
 @NgModule({

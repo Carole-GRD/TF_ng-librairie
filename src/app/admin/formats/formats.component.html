@@ -2,6 +2,8 @@
 <div class="container">
     <h3>Gestion des formats</h3>
     <p>Nombre de formats : {{ countFormats }}</p>
+
+    <a  class="mb-2" routerLink="/admin/format/create">Ajouter un format</a>
     
     <div class="content">
             <article *ngFor="let format of listFormats">
@@ -15,5 +17,4 @@
             </article>
     </div>
     
-    <a  class="mb-2" routerLink="/admin/format/create">Ajouter un format</a>
 </div>

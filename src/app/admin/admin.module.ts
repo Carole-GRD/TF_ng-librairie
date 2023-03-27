@@ -19,6 +19,9 @@ import { UpdatePublisherComponent } from './publishers/update-publisher/update-p
 import { UsersComponent } from './users/users.component';
 import { CreateUserComponent } from './users/create-user/create-user.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
+import { BooksComponent } from './books/books.component';
+import { CreateBookComponent } from './books/create-book/create-book.component';
+import { UpdateBookComponent } from './books/update-book/update-book.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { UpdateUserComponent } from './users/update-user/update-user.component';
     UpdatePublisherComponent,
     UsersComponent,
     CreateUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    BooksComponent,
+    CreateBookComponent,
+    UpdateBookComponent
   ],
   imports: [
     CommonModule,

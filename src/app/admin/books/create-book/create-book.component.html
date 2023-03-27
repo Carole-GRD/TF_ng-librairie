@@ -1,0 +1,56 @@
+
+
+<div class="content-create-update">
+    
+    <div class="button-back">
+        <a routerLink="/admin/book">Revenir à la liste des livres</a>
+    </div>
+
+    <div>
+        <h2 class="mb-10">Enregistrer un livre</h2>
+        
+        <form [formGroup]="bookForm" (ngSubmit)="createBook()">
+            <div class="form-group mb-10">
+                <label for="title">Titre :</label>
+                <input id="title" type="text" formControlName="title">
+                <span class="txt-danger" *ngIf="bookForm.get('title')?.errors?.['required'] && bookForm.get('title')?.touched">Ce champ est requis</span>
+            </div>
+            <div class="form-group mb-10">
+                <label for="description">Résumé :</label>
+                <input id="description" type="text" formControlName="description">
+                <span class="txt-danger" *ngIf="bookForm.get('description')?.errors?.['required'] && bookForm.get('description')?.touched">Ce champ est requis</span>
+            </div>
+            <div class="form-group mb-10">
+                <label for="publication_date">Date de publication :</label>
+                <input id="publication_date" type="date" formControlName="publication_date">
+                <span class="txt-danger" *ngIf="bookForm.get('publication_date')?.errors?.['required'] && bookForm.get('publication_date')?.touched">Ce champ est requis</span>
+            </div>
+            <div class="form-group mb-10">
+                <label for="genre">Genre :</label>
+                <select id="genre" formControlName="GenreId">
+                    <option [value]="null" disabled selected hidden>-- Sélectionner un genre --</option>
+                    <option *ngFor="let genre of listGenres" [value]="genre.id">{{ genre.name }}</option>
+                </select>
+            </div>
+            <div class="form-group mb-10">
+                <button type="button" (click)="addAuthor()">Ajouter un auteur</button>
+                <div *ngFor="let control of getAuthorsForm().controls; let i = index">
+                    <div *ngIf="getAuthorsForm().controls.length !== 0" formArrayName="authors">
+                        <p>Auteur {{ i + 1 }}</p>
+                    
+                        <select id="authors" [formControlName]="i">
+                            <option [value]="null" disabled selected hidden>-- Sélectionner un auteur --</option>
+                            <option *ngFor="let author of listAuthors" [value]="author.id">{{ author.firstname }} {{ author.lastname }}</option>
+
+                        </select>
+                        <button type="button" (click)="removeAuthor(i)">X</button>
+                    </div>
+                </div>
+
+            </div>
+            <button type="submit">Enregistrer</button>
+        </form>
+    </div>
+
+</div>
+

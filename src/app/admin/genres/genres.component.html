@@ -2,6 +2,8 @@
 <div class="container">
     <h3>Gestion des genres</h3>
     <p>Nombre de genres : {{ countGenres }}</p>
+
+    <a  class="mb-2" routerLink="/admin/genre/create">Ajouter un genre</a>
     
     <div class="content">
             <article *ngFor="let genre of listGenres">
@@ -15,5 +17,4 @@
             </article>
     </div>
     
-    <a  class="mb-2" routerLink="/admin/genre/create">Ajouter un genre</a>
 </div>

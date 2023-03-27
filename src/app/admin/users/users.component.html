@@ -2,6 +2,8 @@
 <div class="container">
     <h3>Gestion des utilisateurs</h3>
     <p>Nombre d'utilisateurs : {{ countUsers }}</p>
+
+    <a  class="mb-2" routerLink="/admin/user/create">Ajouter un utilisateur</a>
     
     <div class="content">
             <article *ngFor="let user of listUsers">
@@ -20,7 +22,6 @@
             </article>
     </div>
     
-    <a  class="mb-2" routerLink="/admin/user/create">Ajouter un utilisateur</a>
 </div>
 
 

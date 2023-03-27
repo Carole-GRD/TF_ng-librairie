@@ -1,0 +1,58 @@
+
+<div class="container">
+    <h3>Gestion des commandes</h3>
+    <p>Nombre de commandes : {{ countOrders }}</p>
+
+    <a  class="mb-2" routerLink="/admin/order/create">Ajouter une commande</a>
+    
+    <div class="content">
+            <article class="article-order" 
+                     *ngFor="let order of listOrders">
+                <section>
+                    <p>{{ order.User?.firstname }} {{ order.User?.lastname }}</p>
+                    
+                    <ul *ngFor="let edition of order.Editions">
+                        <!-- TODO : récupérer les informations sur l'édition 
+                            -> quantity + delivery_status (table MM_Order_Edition)
+                            -> price (table Edition)
+                            -> titre (table Book)
+                            -> auteur  
+                            -> genre, format, maison d'édition 
+                        -->
+                        <li>Edition : {{ edition.id }}</li>
+                        <li>Prix : {{ edition.price }}</li>
+                    </ul>
+
+                    <p>{{ order.status }}</p>
+
+                    <p>Adresse de livraison :</p>
+                    <div class="col2">
+                        <div class="left-div">
+                            <p>Rue : </p>
+                            <p>Numéro : </p>
+                            <p>Localité : </p>
+                            <p>Code postal : </p>
+                            <p>Pays : </p>
+                        </div>
+                        <div class="right-div">
+                            <p>{{ order.delivery_street }}</p>
+                            <p>{{ order.delivery_number }}</p>
+                            <p>{{ order.delivery_city }}</p>
+                            <p>{{ order.delivery_postalCode }}</p>
+                            <p>{{ order.delivery_country }}</p>
+                        </div>
+                    </div>
+
+                    <p>Pays : {{ order.delivery_country }}</p>
+                    <p>Mode de paiement : {{ order.payment_method }}</p>
+                    <p>Paiement : {{ order.payment_status }}</p>
+                </section>
+                <section class="buttons-update-delete">
+                    <button routerLink="/admin/order/update/{{order.id}}">Modifier</button>
+                    <button (click)="deleteOrder(order.id)">Supprimer</button>
+                </section>
+            </article>
+    </div>
+</div>
+
+

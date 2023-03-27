@@ -6,15 +6,18 @@ import { UpdateAuthorComponent } from './authors/update-author/update-author.com
 import { BooksComponent } from './books/books.component';
 import { CreateBookComponent } from './books/create-book/create-book.component';
 import { UpdateBookComponent } from './books/update-book/update-book.component';
+import { CreateOrderComponent } from './create-order/create-order.component';
 import { CreateFormatComponent } from './formats/create-format/create-format.component';
 import { FormatsComponent } from './formats/formats.component';
 import { UpdateFormatComponent } from './formats/update-format/update-format.component';
 import { CreateGenreComponent } from './genres/create-genre/create-genre.component';
 import { GenresComponent } from './genres/genres.component';
 import { UpdateGenreComponent } from './genres/update-genre/update-genre.component';
+import { OrdersComponent } from './orders/orders.component';
 import { CreatePublisherComponent } from './publishers/create-publisher/create-publisher.component';
 import { PublishersComponent } from './publishers/publishers.component';
 import { UpdatePublisherComponent } from './publishers/update-publisher/update-publisher.component';
+import { UpdateOrderComponent } from './update-order/update-order.component';
 import { CreateUserComponent } from './users/create-user/create-user.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
 import { UsersComponent } from './users/users.component';
@@ -38,6 +41,9 @@ const routes: Routes = [
   { path: 'book', component: BooksComponent },
   { path: 'book/create', component: CreateBookComponent },
   { path: 'book/update/:id', component: UpdateBookComponent },
+  { path: 'order', component: OrdersComponent },
+  { path: 'order/create', component: CreateOrderComponent },
+  { path: 'order/update/:id', component: UpdateOrderComponent },
 ];
 
 @NgModule({

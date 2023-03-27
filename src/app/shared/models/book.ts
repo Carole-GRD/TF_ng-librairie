@@ -9,6 +9,7 @@ export interface Book {
     Genre? : Genre;
     Authors : Author[];
 }
+
 export interface BookUpdate {
     title : string;
     description : string;
@@ -31,31 +32,6 @@ export interface BookResult {
     statusCode : number;
 }
 
-
-// export class Book {
-//     id: number;
-//     title: string;
-//     description: string;
-//     publication_date: Date;
-//     Genre?: Genre;
-//     Authors: Author[] ;
-  
-//     constructor(
-//       id: number,
-//       title: string,
-//       description: string,
-//       publication_date: Date,
-//       Genre: Genre,
-//       Authors: Author[]
-//     ) {
-//       this.id = id;
-//       this.title = title;
-//       this.description = description;
-//       this.publication_date = publication_date;
-//       this.Genre = Genre;
-//       this.Authors = Authors;
-//     }
-//   }
   
   
   

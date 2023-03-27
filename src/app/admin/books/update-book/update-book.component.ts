@@ -150,11 +150,9 @@ export class UpdateBookComponent implements OnInit {
   removeAuthor(id: number): void {
 
     const authorId = this.bookForm.value.authors[id];
-
     this.listAuthorsDelete.push(authorId);
 
     this.authorsForm.removeAt(id);
-
   }
 
 }

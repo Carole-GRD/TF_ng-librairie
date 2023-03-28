@@ -9,7 +9,7 @@
             <article *ngFor="let user of listUsers">
                 <section>
                     <p>{{ user.lastname | uppercase }} {{ user.firstname }}</p>
-                    <p>{{ user.pseudo }}</p>
+                    <p *ngIf="user.pseudo !== 'null' && user.pseudo.trim() !== ''">{{ user.pseudo }}</p>
                     <p>{{ user.email }}</p>
                     <p>{{ user.password }}</p>
                     <p>{{ user.role }}</p>                

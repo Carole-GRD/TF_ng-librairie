@@ -11,7 +11,7 @@
                 <section>
                     <p>{{ order.User?.firstname }} {{ order.User?.lastname }}</p>
                     
-                    <ul *ngFor="let edition of order.Editions">
+                    <ul *ngFor="let edition of order.Editions, index as i">
                         <!-- TODO : récupérer les informations sur l'édition 
                             -> quantity + delivery_status (table MM_Order_Edition)
                             -> price (table Edition)
@@ -19,9 +19,12 @@
                             -> auteur  
                             -> genre, format, maison d'édition 
                         -->
-                        <li>Edition : {{ edition.id }}</li>
-                        <li>Prix : {{ edition.price }}</li>
+                        <li>Article {{ i + 1 }} : {{ edition.Book.title }}</li>
+                        <li>Prix : {{ edition.price }} €</li>
+                        <li>Quantité : {{ edition.quantity }}</li>
+                        <li>Total : {{ edition.price * edition.quantity }} €</li>
                     </ul>
+                    <p>Total de la commande : {{ totalOrder.toFixed(2) }} €</p>
 
                     <p>{{ order.status }}</p>
 

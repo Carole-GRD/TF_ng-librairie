@@ -23,8 +23,8 @@ import { BooksComponent } from './books/books.component';
 import { CreateBookComponent } from './books/create-book/create-book.component';
 import { UpdateBookComponent } from './books/update-book/update-book.component';
 import { OrdersComponent } from './orders/orders.component';
-import { CreateOrderComponent } from './create-order/create-order.component';
-import { UpdateOrderComponent } from './update-order/update-order.component';
+import { CreateOrderComponent } from './orders/create-order/create-order.component';
+import { UpdateOrderComponent } from './orders/update-order/update-order.component';
 
 @NgModule({
   declarations: [

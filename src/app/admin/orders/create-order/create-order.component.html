@@ -1,0 +1,52 @@
+
+
+<div class="content-create-update">
+    
+    <div class="button-back">
+        <a routerLink="/admin/order">Revenir à la liste des commandes</a>
+    </div>
+
+    <div>
+        <h2 class="mb-10">Enregistrer un format</h2>
+        
+        <form [formGroup]="orderForm" (ngSubmit)="createOrder()">
+            <div class="form-group mb-10">
+                <label for="status">Status :</label>
+                <input id="status" type="text" formControlName="status">
+            </div>
+            <div class="form-group mb-10">
+                <label for="delivery_street">Rue :</label>
+                <input id="delivery_street" type="text" formControlName="delivery_street">
+            </div>
+            <div class="form-group mb-10">
+                <label for="delivery_number">Numéro :</label>
+                <input id="delivery_number" type="text" formControlName="delivery_number">
+            </div>
+            <div class="form-group mb-10">
+                <label for="delivery_city">Localité :</label>
+                <input id="delivery_city" type="text" formControlName="delivery_city">
+            </div>
+            <div class="form-group mb-10">
+                <label for="delivery_postalCode">CP :</label>
+                <input id="delivery_postalCode" type="text" formControlName="delivery_postalCode">
+            </div>
+            <div class="form-group mb-10">
+                <label for="delivery_country">Pays :</label>
+                <input id="delivery_country" type="text" formControlName="delivery_country">
+            </div>
+            <div class="form-group mb-10">
+                <label for="payment_method">Mode de paiement :</label>
+                <input id="payment_method" type="text" formControlName="payment_method">
+            </div>
+            <div class="form-group mb-10">
+                <label for="payment_status">Statut du paiement :</label>
+                <input id="payment_status" type="text" formControlName="payment_status">
+            </div>
+            <button type="submit">Enregistrer</button>
+        </form>
+    </div>
+    
+</div>
+
+<!-- <span class="txt-danger" *ngIf="formatForm.get('status')?.errors?.['required'] && formatForm.get('status')?.touched">Ce champ est requis</span> -->
+

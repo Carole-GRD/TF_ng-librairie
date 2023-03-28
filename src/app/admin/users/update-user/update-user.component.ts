@@ -61,8 +61,11 @@ export class UpdateUserComponent implements OnInit {
   }
 
   updateUser() {
+    console.log('updateUser()');
+  
     if (this.userForm.valid) {
-      console.log('update USer');
+      console.log(this.fileAvatar);
+
       this._userService.update(this.userId, this.userForm.value, this.fileAvatar).subscribe({
         error : () => {},
         complete : () => {

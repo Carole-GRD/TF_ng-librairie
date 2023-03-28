@@ -14,6 +14,8 @@ export interface Order {
     // TODO : changer le type de Editions
     Editions : any[];
     // Editions : Edition[];
+    quantity : number;
+    delivery_status : string;
 }
 
 export interface OrderResultArray {

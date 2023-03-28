@@ -15,6 +15,8 @@ export class OrdersComponent implements OnInit {
   listOrders : Order[] = [];
   countOrders! : number;
   listBooks : Book[] = [];
+  totalEdition : number = 0;
+  totalOrder : number = 0;
 
 
   constructor(
@@ -26,19 +28,22 @@ export class OrdersComponent implements OnInit {
   ngOnInit() : void {
     this._orderService.getAll().subscribe({
       next : (res) => {
-        // console.log('NEXT -> "res"', res);
-        // console.log('NEXT -> "res.results[0].Editions[0].price"', res.results[0].Editions[0].price);
-        // console.log(res.results[0].Editions);
+        
         this.listOrders = res.results;
         this.countOrders = res.count;
-        // console.log(this.listOrders[0].Editions);
+
         for (let editions of this.listOrders) {
-          console.log(editions.Editions);
+          // console.log(editions);
+          
           for (let edition of editions.Editions) {
-            console.log(edition.ISBN);
-            console.log(edition.Book.title);
-            
+            console.log('edition.price', edition.price);
+            console.log('edition.quantity', edition.quantity);
+            this.totalEdition = edition.price * edition.quantity;
+            console.log('totalEdition : ', this.totalEdition);
+            this.totalOrder += this.totalEdition;
           }
+          console.log('totalOrder : ', this.totalOrder.toFixed(2));
+          
         }  
       }
     })

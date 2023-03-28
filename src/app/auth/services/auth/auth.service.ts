@@ -13,10 +13,12 @@ export class AuthService {
   private _authUrl = 'http://localhost:8080/api/auth/';
 
   private _isConnected$ : BehaviorSubject<boolean> = new BehaviorSubject(localStorage.getItem('token') && localStorage.getItem('token') != '' ? true : false);
+  private _userRole$ : BehaviorSubject<string | null> = new BehaviorSubject(localStorage.getItem('userRole'));
 
   // asObservable permet de transformer un Subject ou Behavior en simple Observable
   // ainsi, les composants pourront juste s'abonner à lui, mais c'est le service qui se charge de next une nouvelle valeur
   isConnected$ : Observable<boolean> = this._isConnected$.asObservable();
+  userRole$ : Observable<string | null> = this._userRole$.asObservable();
 
   constructor(private _httpClient : HttpClient) { }
 
@@ -43,12 +45,14 @@ export class AuthService {
 
   logout() : void {
     localStorage.clear();
+    this._userRole$.next(null);
     // Si on stocke d'autres valeurs que l'on veut garder
       // -> localStorage.removeItem('token') - pareil avec userId et userRole
     this._isConnected$.next(false);
   }
 
   connect() : void {
+    this._userRole$.next(localStorage.getItem('userRole'));
     this._isConnected$.next(true);
   }
 }

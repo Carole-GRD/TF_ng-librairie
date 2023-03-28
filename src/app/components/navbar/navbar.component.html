@@ -3,12 +3,12 @@
         <li>
             <a routerLink="/home">Livre & Cie</a>
             <ul>
-                <li><a routerLink="/home/book">Livres</a></li>
-                <li><a routerLink="/home/order">Commandes</a></li>
-                <li><a routerLink="/home/user">Profil</a></li>
+                <li><a routerLink="/book">Livres</a></li>
+                <li><a routerLink="/order">Commandes</a></li>
+                <li><a routerLink="/user">Profil</a></li>
             </ul>
         </li>
-        <li class="menu-admin">
+        <li class="menu-admin" *ngIf="isConnected && (userRole === 'Admin' || userRole === 'Sous-Admin')">
             <a routerLink="/admin">Panel Admin</a>
             <ul>
                 <li><a routerLink="/admin/author">Auteurs</a></li>

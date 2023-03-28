@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/auth/services/auth/auth.service';
 export class NavbarComponent {
   
   isConnected : boolean = false;
+  userRole! : string | null;
 
   constructor(private _authService : AuthService) {}
 
@@ -16,6 +17,9 @@ export class NavbarComponent {
     this._authService.isConnected$.subscribe((connectionState : boolean) => {
       console.log('ETAT DE CONNEXION : ', connectionState);
       this.isConnected = connectionState;
+    })
+    this._authService.userRole$.subscribe((userRole : string | null) => {
+      this.userRole = userRole;
     })
   }
 

@@ -1,0 +1,26 @@
+
+<h2>Se connecter</h2>
+
+<div class="mb-2">
+    <form [formGroup]="loginForm">
+        <div class="form-group mb-2">
+            <label for="credential">Credential : </label>
+            <input type="credential" formControlName="credential">
+            <span class="txt-danger" *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('credential')?.touched">Ce champ est requis</span>
+            <span class="txt-danger" *ngIf="loginForm.get('credential')?.errors?.['credential'] && loginForm.get('credential')?.dirty && loginForm.get('credential')?.touched">Vous devez entrer un email ou un pseudo valide</span>
+        </div>
+        <div class="form-group mb-2">
+            <label for="pwd">Mot de passe : </label>
+            <input type="password" formControlName="password">
+            <span class="txt-danger" *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">Ce champ est requis</span>
+            <span class="txt-danger" *ngIf="loginForm.get('password')?.errors?.['pattern'] && loginForm.get('password')?.dirty && loginForm.get('password')?.touched">
+                Le mot de passe doit faire au moins 8 caractères et contenir au moins une majuscule, une minuscule et un chiffre
+            </span>
+        </div>
+
+        <button type="submit" (click)="connectToAccount()">Connexion</button>
+    </form>
+</div>
+
+<a routerLink="/register">Pas de compte ? Cliquez ici pour en créer un</a>
+

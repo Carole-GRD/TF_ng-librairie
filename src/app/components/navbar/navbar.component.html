@@ -23,9 +23,7 @@
         </li>    
     </ul>
     <div class="buttons">
-        <button>Se connecter</button>
-        <!-- <button *ngIf="!isConnected" routerLink="/login">Se connecter</button> -->
-        <button>Se déconnecter</button>
-        <!-- <button *ngIf="isConnected" (click)="disConnect()" >Se déconnecter</button> -->
+        <button *ngIf="!isConnected" routerLink="/login">Se connecter</button>
+        <button *ngIf="isConnected" (click)="disConnect()" >Se déconnecter</button>
     </div>
 </nav>

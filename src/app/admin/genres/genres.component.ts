@@ -19,17 +19,17 @@ export class GenresComponent implements OnInit {
   ngOnInit() : void {
     this._genreService.getAll().subscribe({
       next : (res) => {
-        console.log('NEXT', res);
+        // console.log('NEXT', res);
         this.listGenres = res.results;
         this.countGenres = res.count;
       },
 
       error : (err) => {
-        console.log('ERROR', err);
+        // console.log('ERROR', err);
       },
 
       complete : () => {
-        console.log('COMPLETE');       
+        // console.log('COMPLETE');       
       }
     })
   }

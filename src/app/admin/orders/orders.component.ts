@@ -33,17 +33,11 @@ export class OrdersComponent implements OnInit {
         this.countOrders = res.count;
 
         for (let editions of this.listOrders) {
-          // console.log(editions);
-          
           for (let edition of editions.Editions) {
-            console.log('edition.price', edition.price);
-            console.log('edition.quantity', edition.quantity);
             this.totalEdition = edition.price * edition.quantity;
-            console.log('totalEdition : ', this.totalEdition);
             this.totalOrder += this.totalEdition;
           }
-          console.log('totalOrder : ', this.totalOrder.toFixed(2));
-          
+  
         }  
       }
     })

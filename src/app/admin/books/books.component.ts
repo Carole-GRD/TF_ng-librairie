@@ -18,17 +18,17 @@ export class BooksComponent implements OnInit {
   ngOnInit() : void {
     this._bookService.getAll().subscribe({
       next : (res) => {
-        console.log('NEXT', res);
+        // console.log('NEXT', res);
         this.listBooks = res.results;
         this.countBooks = res.count;
       },
 
       error : (err) => {
-        console.log('ERROR', err);
+        // console.log('ERROR', err);
       },
 
       complete : () => {
-        console.log('COMPLETE');       
+        // console.log('COMPLETE');       
       }
     })
   }

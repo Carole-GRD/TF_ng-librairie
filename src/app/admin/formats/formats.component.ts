@@ -18,17 +18,17 @@ export class FormatsComponent implements OnInit {
   ngOnInit() : void {
     this._formatService.getAll().subscribe({
       next : (res) => {
-        console.log('NEXT', res);
+        // console.log('NEXT', res);
         this.listFormats = res.results;
         this.countFormats = res.count;
       },
 
       error : (err) => {
-        console.log('ERROR', err);
+        // console.log('ERROR', err);
       },
 
       complete : () => {
-        console.log('COMPLETE');       
+        // console.log('COMPLETE');       
       }
     })
   }

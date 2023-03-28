@@ -21,16 +21,16 @@ export class AuthorsComponent implements OnInit {
   ngOnInit(): void {
     this._authorService.getAll().subscribe({
       next : (res) => {
-        console.log('RES : ', res);
+        // console.log('RES : ', res);
         this.listAuthors = res.results;
         this.countAuthors = res.count;
       },
       error : (err) => {
-        console.log('ERR : ', err);
+        // console.log('ERR : ', err);
         
       },
       complete : () => {
-        console.log('COMPLETE');
+        // console.log('COMPLETE');
 
       }
     })
@@ -39,7 +39,7 @@ export class AuthorsComponent implements OnInit {
   deleteAuthor(id : number) {
     this._authorService.delete(id).subscribe({
       error : (err) => {
-        console.log('erreur de suppression : ', err);
+        // console.log('erreur de suppression : ', err);
         if(err.status === 404) {
           this._router.navigateByUrl('/not-found');
         }

@@ -18,17 +18,17 @@ export class PublishersComponent implements OnInit {
   ngOnInit() : void {
     this._publisherService.getAll().subscribe({
       next : (res) => {
-        console.log('NEXT', res);
+        // console.log('NEXT', res);
         this.listPublishers = res.results;
         this.countPublishers = res.count;
       },
 
       error : (err) => {
-        console.log('ERROR', err);
+        // console.log('ERROR', err);
       },
 
       complete : () => {
-        console.log('COMPLETE');       
+        // console.log('COMPLETE');       
       }
     })
   }

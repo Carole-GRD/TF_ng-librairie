@@ -21,16 +21,16 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this._userService.getAll().subscribe({
       next : (res) => {
-        console.log('RES : ', res);
+        // console.log('RES : ', res);
         this.listUsers = res.results;
         this.countUsers = res.count;
       },
       error : (err) => {
-        console.log('ERR : ', err);
+        // console.log('ERR : ', err);
         
       },
       complete : () => {
-        console.log('COMPLETE');
+        // console.log('COMPLETE');
 
       }
     })

@@ -9,11 +9,12 @@
             <article *ngFor="let user of listUsers">
                 <section>
                     <p>{{ user.lastname | uppercase }} {{ user.firstname }}</p>
-                    <p *ngIf="user.pseudo !== 'null' && user.pseudo.trim() !== ''">{{ user.pseudo }}</p>
+                    <p *ngIf="user.pseudo !== null && user.pseudo.trim() !== ''">{{ user.pseudo }}</p>
                     <p>{{ user.email }}</p>
                     <p>{{ user.password }}</p>
                     <p>{{ user.role }}</p>                
-                    <img [src]="'http://localhost:8080' + user.avatar" [alt]="'Avatar de ' + user.firstname + ' ' + user.lastname">
+                    <img *ngIf="user.avatar" [src]="'http://localhost:8080' + user.avatar" [alt]="'Avatar de ' + user.firstname + ' ' + user.lastname">
+                    <img *ngIf="!user.avatar" src="../../../assets/images/avatar.jpg" [alt]="'Avatar de ' + user.firstname + ' ' + user.lastname">
                 </section>
                 <section class="buttons-update-delete">
                     <button routerLink="/admin/user/update/{{user.id}}">Modifier</button>

@@ -1,0 +1,53 @@
+
+
+
+<div class="content-create-update">
+    
+    <div class="button-back">
+        <a routerLink="/admin/edition">Revenir à la liste des éditions</a>
+    </div>
+
+    <div>
+        <h2 class="mb-10">Enregistrer un utilisateur</h2>
+        
+        <form [formGroup]="editionForm" (ngSubmit)="updateEdition()">
+            <div class="form-group mb-10">
+                <label for="ISBN">ISBN :</label>
+                <input id="ISBN" type="text" formControlName="ISBN">
+                <span class="txt-danger" *ngIf="editionForm.get('ISBN')?.errors?.['required'] && editionForm.get('ISBN')?.touched">Ce champ est requis</span>
+            </div>
+            <div class="form-group mb-10">
+                <label for="price">Prix :</label>
+                <input id="price" type="text" formControlName="price">
+                <span class="txt-danger" *ngIf="editionForm.get('price')?.errors?.['required'] && editionForm.get('price')?.touched">Ce champ est requis</span>
+            </div>
+            <div class="form-group mb-10">
+                <label for="cover">Cover :</label>
+                <input id="cover" type="file" (change)="loadFile($event)">
+            </div>
+            <div class="form-group mb-10">
+                <label for="PublisherId">Publisher :</label>
+                <select id="PublisherId" formControlName="PublisherId">
+                    <option *ngFor="let publisher of listPublishers" [value]="publisher.id">{{ publisher.name }}</option>
+                </select>
+            </div>
+            <div class="form-group mb-10">
+                <label for="FormatId">Format :</label>
+                <select id="FormatId" formControlName="FormatId">
+                    <option *ngFor="let format of listFormats" [value]="format.id">{{ format.name }}</option>
+                </select>
+            </div>
+            <div class="form-group mb-10">
+                <label for="BookId">Book :</label>
+                <select id="BookId" formControlName="BookId">
+                    <option *ngFor="let book of listBooks" [value]="book.id">{{ book.title }}</option>
+                </select>
+            </div>
+            
+            <button type="submit">Enregistrer</button>
+        </form>
+    </div>
+
+
+</div>
+

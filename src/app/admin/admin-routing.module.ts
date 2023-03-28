@@ -6,6 +6,9 @@ import { UpdateAuthorComponent } from './authors/update-author/update-author.com
 import { BooksComponent } from './books/books.component';
 import { CreateBookComponent } from './books/create-book/create-book.component';
 import { UpdateBookComponent } from './books/update-book/update-book.component';
+import { CreateEditionComponent } from './editions/create-edition/create-edition.component';
+import { EditionsComponent } from './editions/editions.component';
+import { UpdateEditionComponent } from './editions/update-edition/update-edition.component';
 
 import { CreateFormatComponent } from './formats/create-format/create-format.component';
 import { FormatsComponent } from './formats/formats.component';
@@ -46,6 +49,9 @@ const routes: Routes = [
   { path: 'order', component: OrdersComponent },
   { path: 'order/create', component: CreateOrderComponent },
   { path: 'order/update/:id', component: UpdateOrderComponent},
+  { path: 'edition', component: EditionsComponent },
+  { path: 'edition/create', component: CreateEditionComponent },
+  { path: 'edition/update/:id', component: UpdateEditionComponent },
 ];
 
 @NgModule({

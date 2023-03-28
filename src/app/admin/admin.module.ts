@@ -25,6 +25,9 @@ import { UpdateBookComponent } from './books/update-book/update-book.component';
 import { OrdersComponent } from './orders/orders.component';
 import { CreateOrderComponent } from './orders/create-order/create-order.component';
 import { UpdateOrderComponent } from './orders/update-order/update-order.component';
+import { EditionsComponent } from './editions/editions.component';
+import { CreateEditionComponent } from './editions/create-edition/create-edition.component';
+import { UpdateEditionComponent } from './editions/update-edition/update-edition.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { UpdateOrderComponent } from './orders/update-order/update-order.compone
     UpdateBookComponent,
     OrdersComponent,
     CreateOrderComponent,
-    UpdateOrderComponent
+    UpdateOrderComponent,
+    EditionsComponent,
+    CreateEditionComponent,
+    UpdateEditionComponent
   ],
   imports: [
     CommonModule,

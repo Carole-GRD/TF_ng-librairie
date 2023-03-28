@@ -24,7 +24,7 @@ export class UpdateGenreComponent implements OnInit {
       this.genreForm = this._fb.group({
         name : [null, [Validators.required, Validators.maxLength(50)]]
       })
-      this.genreId= parseInt(this._activatedRoute.snapshot.params['id']);
+      this.genreId = parseInt(this._activatedRoute.snapshot.params['id']);
   }
 
   ngOnInit() : void {

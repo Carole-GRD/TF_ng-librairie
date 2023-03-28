@@ -1,0 +1,29 @@
+
+
+<div class="container">
+    <h3>Gestion des éditions</h3>
+    <p>Nombre de livres : {{ countEditions }}</p>
+
+    <a  class="mb-2" routerLink="/admin/edition/create">Ajouter une édition</a>
+    
+    <div class="content">
+            <article *ngFor="let edition of listEditions">
+                <section>
+                    <p>ISBN : {{ edition.ISBN }}</p>
+                    <p><span>Prix : </span>{{ edition.price }} €</p>
+                    <img [src]="'http://localhost:8080' + edition.cover" [alt]="'Cover du livre ' + edition.Book?.title">
+                    <p><span>Stock : </span>{{ edition.stock }}</p>
+                    <p><span>Maison d'édition : </span>{{ edition.Publisher?.name }}</p>
+                    <p><span>Format : </span>{{ edition.Format?.name }}</p>
+                    <p><span>Livre : </span>{{ edition.Book?.title }}</p>
+                </section>
+                <section class="buttons-update-delete">
+                    <button routerLink="/admin/edition/update/{{edition.id}}">Modifier</button>
+                    <button (click)="deleteEdition(edition.id)">Supprimer</button>
+                </section>
+            </article>
+    </div>
+</div>
+
+
+

@@ -5,11 +5,11 @@
 <p>----------------------------------------</p>
 <div *ngFor="let edition of order?.Editions, index as i">
     <p>Article {{ i + 1 }} : {{ edition.Book.title }}</p>
-    <p>Prix : {{ edition.price }} €</p>
+    <p>Prix : {{ edition.price.toFixed(2) }} €</p>
     <p>Quantité : {{ edition.quantity }}</p>
-    <p>Sous-total : {{ sousTotal[i] }} €</p>
+    <p>Sous-total : {{ sousTotal[i].toFixed(2) }} €</p>
     <p>----------------------------------------</p>
 </div>
 
 <p>----------------------------------------</p>
-<p>Total = {{ total }} €</p>
+<p>Total = {{ total.toFixed(2) }} €</p>

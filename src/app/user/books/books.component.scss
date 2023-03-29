@@ -1,0 +1,25 @@
+
+
+.container article {
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    padding: 1em 2em;
+}
+
+
+a.book-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    background-color: #f9f9f9;
+    min-width: none;
+    padding: 0;
+    transition: none;
+}
+
+ 
+img {
+    height: 25vh;
+}

@@ -3,13 +3,14 @@
         <li>
             <a routerLink="/home">Livre & Cie</a>
             <ul>
-                <li><a routerLink="/book">Livres</a></li>
-                <li><a routerLink="/order">Commandes</a></li>
-                <li><a routerLink="/user">Profil</a></li>
+                <li><a routerLink="/user/book">Livres</a></li>
+                <li><a routerLink="/user/order">Commandes</a></li>
+                <li><a routerLink="/user/profil">Profil</a></li>
             </ul>
         </li>
         <li class="menu-admin" *ngIf="isConnected && (userRole === 'Admin' || userRole === 'Sous-Admin')">
-            <a routerLink="/admin">Panel Admin</a>
+            <!-- <a routerLink="/admin">Panel Admin</a> -->
+            <a>Panel Admin</a>
             <ul>
                 <li><a routerLink="/admin/author">Auteurs</a></li>
                 <li><a routerLink="/admin/order">Commandes</a></li>
@@ -22,6 +23,10 @@
             </ul>
         </li>    
     </ul>
+    <a *ngIf="isConnected" class="basket" routerLink="/user/basket">
+        <p>🛒</p> 
+        <p *ngIf="isConnected && panier !== 0">{{ panier }}</p>
+    </a>
     <div class="buttons">
         <button *ngIf="!isConnected" routerLink="/login">Se connecter</button>
         <button *ngIf="isConnected" (click)="disConnect()" >Se déconnecter</button>

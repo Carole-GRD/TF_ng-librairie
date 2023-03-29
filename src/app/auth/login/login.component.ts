@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BasketService } from 'src/app/shared/services/basket/basket.service';
 import { AuthService } from '../services/auth/auth.service';
 
 @Component({
@@ -13,9 +14,11 @@ export class LoginComponent {
   loginForm : FormGroup;
 
 
+
   constructor(
     private _fb : FormBuilder,
     private _authService : AuthService,
+    private _basketService : BasketService,
     private _router : Router
   ) {
     this.loginForm = this._fb.group({
@@ -35,7 +38,7 @@ export class LoginComponent {
 
         next : (res) => {
           // console.log('RES : ', res);
-          // console.log('RES - token : ', res.result.token);
+          console.log('RES - token : ', res.result);
           // console.log('RES - userToConnect : ', res.result.userToConnect.id);
           
           // Mettre dans le localStorage, notre token + autres infos
@@ -45,6 +48,8 @@ export class LoginComponent {
 
           // Gestion observable pour savoir si une personne est connectée
           this._authService.connect();    // Pour émettre aux autres composants que la connection est établie
+          
+          
         },
 
         error : (err) => {
@@ -57,9 +62,13 @@ export class LoginComponent {
         },
 
       })
+      
     }
     else {
       this.loginForm.markAllAsTouched();
     }
+
+    
   }
+  
 }

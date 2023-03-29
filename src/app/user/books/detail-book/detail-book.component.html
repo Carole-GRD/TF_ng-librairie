@@ -1,0 +1,27 @@
+
+<div class="container" *ngIf="edition">
+    <div class="content detail-book">
+
+        <h2>{{ edition.Book?.title }}</h2>
+        <p>ISBN : {{ edition.ISBN }}</p>
+        <img [src]="'http://localhost:8080' + edition.cover" [alt]="'Image de l\'édition numéro ' + edition.Book?.title">
+        <p>{{ edition.Book?.description }}</p>
+        <p>Prix : {{ edition.price }} €</p>
+        <p>Genre : {{ edition.Book?.Genre?.name}}</p>
+        <div class="authors">
+            <p>Auteur(s) : </p>
+            <div *ngFor="let author of edition.Book?.Authors, index as i"
+            class="ch-1">
+                <div *ngIf="i !== lastIndex">
+                    <p> {{author.firstname}} {{author.lastname}}, </p>
+                </div>
+                <div *ngIf="i === lastIndex">
+                    <p> {{author.firstname}} {{author.lastname}}</p>
+                </div>            
+            </div>
+        </div>
+        <p>Stock : {{ edition.stock }}</p>
+        <p>Paru le {{ edition.Book?.publication_date | date : 'dd/MM/yyyy' }}</p>
+    
+    </div>
+</div>

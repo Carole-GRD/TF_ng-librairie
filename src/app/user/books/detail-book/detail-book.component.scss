@@ -1,0 +1,32 @@
+
+
+.content.detail-book {
+    width: 70vw;
+    // height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content.detail-book h2 {
+    background-color: #c3c3c3;
+    border-radius: 0.313em;
+}
+
+.content.detail-book img {
+    max-width: 50%;
+}
+
+.content.detail-book p {
+    text-align: justify;
+    margin: 0;
+}
+
+.authors {
+    display: flex;
+}
+
+.ch-1 {
+    margin-left: 1ch;
+}

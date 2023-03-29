@@ -4,7 +4,7 @@
 <div class="mb-2">
     <form [formGroup]="loginForm">
         <div class="form-group mb-2">
-            <label for="credential">Credential : </label>
+            <label for="credential">Pseudo ou email : </label>
             <input type="credential" formControlName="credential">
             <span class="txt-danger" *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('credential')?.touched">Ce champ est requis</span>
             <span class="txt-danger" *ngIf="loginForm.get('credential')?.errors?.['credential'] && loginForm.get('credential')?.dirty && loginForm.get('credential')?.touched">Vous devez entrer un email ou un pseudo valide</span>

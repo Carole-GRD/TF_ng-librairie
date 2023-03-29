@@ -1,0 +1,16 @@
+
+
+<div class="container">
+    <div class="content">
+        <article *ngFor="let edition of listEditions, index as i">
+            <section class="mb-2">
+
+                <a class="book-detail" routerLink="/user/book/detail/{{edition.id}}"><img [src]="'http://localhost:8080' + edition.cover" [alt]="'Image de l\'édition numéro ' + i"></a>
+            </section>
+            <section class="buttons-update-delete mt-10">
+                <button>Ajouter au panier</button>
+                <!-- <button (click)="addToBasket()">Ajouter au panier</button> -->
+            </section>
+        </article>
+    </div>
+</div>

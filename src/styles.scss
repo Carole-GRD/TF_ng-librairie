@@ -45,24 +45,29 @@ p {
   margin-bottom: 10%;
 }
 
+.mt-10 {
+  margin-top: 10%;
+}
+
 span {
   font-weight: 600;
 }
+
+.basket:hover {
+  border-radius: 50%;
+}
+
 
 
 // --------------------------------------------------------------
 //                           NAVBAR
 // --------------------------------------------------------------
 
-// nav {
-//   // border: 1px solid green;
-//   display: flex;
-//   justify-content: space-between;
-//   // ----------------------
-//   background-color: #eee;
-//   // padding: 20px;
-//   padding: 1.25em;
-// }
+nav {
+  display: flex;
+  align-items: center;
+  min-width: calc(15em + 1ch);
+}
 
 ul {
   list-style-type: none;
